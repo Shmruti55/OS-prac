@@ -1,0 +1,81 @@
+Program 1: FCFS Disk Scheduling
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int req[] = {98,183,37,122,14,124,65,67};
+    int head = 53;
+    int seek = 0;
+
+    for(int i=0;i<8;i++)
+    {
+        seek += abs(req[i] - head);
+        head = req[i];
+    }
+
+    printf("Total Seek Time (FCFS) = %d", seek);
+    return 0;
+}
+
+
+Program 2: SCAN Disk Scheduling
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int req[] = {65,67,98,122,124,183,37,14};
+    int head = 53;
+    int seek = 0;
+    int disk = 199;
+
+    for(int i=0;i<6;i++)
+    {
+        seek += abs(req[i] - head);
+        head = req[i];
+    }
+
+    seek += abs(disk - head);
+    head = disk;
+
+    for(int i=6;i<8;i++)
+    {
+        seek += abs(req[i] - head);
+        head = req[i];
+    }
+
+    printf("Total Seek Time (SCAN) = %d", seek);
+    return 0;
+}
+
+
+Program 3: C-SCAN Disk Scheduling
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int req[] = {65,67,98,122,124,183,14,37};
+    int head = 53;
+    int seek = 0;
+    int disk = 199;
+
+    for(int i=0;i<6;i++)
+    {
+        seek += abs(req[i] - head);
+        head = req[i];
+    }
+
+    seek += abs(disk - head);
+    head = 0;
+
+    for(int i=6;i<8;i++)
+    {
+        seek += abs(req[i] - head);
+        head = req[i];
+    }
+
+    printf("Total Seek Time (C-SCAN) = %d", seek);
+    return 0;
+}
