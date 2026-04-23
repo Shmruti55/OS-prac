@@ -1,0 +1,36 @@
+1.	Open Terminal using:
+Ctrl + Alt + T
+
+2.	Create a sample file:
+nano file1.txt
+Enter some text.
+Save the file:
+Press Ctrl + O → Enter → Ctrl + X
+
+3.	Copy the file:
+cp file1.txt file2.txt
+
+4.	Verify copied content:
+cat file2.txt
+
+VERIFYING KERNEL API USAGE USING STRACE
+To observe kernel system calls used by the cp command, the strace tool is used.
+Run:
+strace cp file1.txt file2.txt
+
+
+touch exp3
+echo "Hi, How are you?">exp3
+cat exp3
+
+cp exp3 exp3.1
+cat exp3.1
+strace cp exp3 exp3.1
+
+ls
+strace ls
+
+mv exp3 exp3.1
+cat exp3.1
+strace mv exp3 exp3.1
+
