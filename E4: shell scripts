@@ -1,0 +1,47 @@
+a) Display OS version, release number, kernel version
+nano info.sh
+Press Enter
+then type following code into info.sh
+
+#!/bin/bash
+echo "OS Version & Release:"
+lsb_release -a
+echo
+echo "Kernel Version:"
+uname -r
+Press Ctrl+O
+Press Enter
+Press Ctril+x
+
+then change the mode of info.sh file
+chmod +x info.sh
+
+then type execute shell script using following commands
+./info.sh
+
+b) Display top 10 processes in descending order
+#!/bin/bash
+echo "Top 10 Processes by CPU Usage:"
+ps -eo pid,ppid,cmd,%cpu --sort=-%cpu | head -11
+
+c) Display processes with highest memory usage.
+#!/bin/bash
+echo "Top Processes by Memory Usage:"
+ps -eo pid,ppid,cmd,%mem --sort=-%mem | head -11
+
+d) Display current logged in user and log name.
+#!/bin/bash
+echo "Current User:"
+whoami
+echo "Login Name:"
+logname
+
+e) Display current shell, home directory, operating system type, current path setting, current working directory.
+#!/bin/bash
+echo "Current Shell: $SHELL"
+echo "Home Directory: $HOME"
+echo "Operating System Type:"
+uname
+echo "Current PATH: $PATH"
+echo "Current Working Directory:"
+pwd
