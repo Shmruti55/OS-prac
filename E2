@@ -1,0 +1,81 @@
+1. DIRECTORY MANAGEMENT COMMANDS
+i) mkdir
+Creates a new directory.
+mkdir name of the directory
+ii) chdir / cd
+Changes the current working directory.
+cd name of the directory
+iii) ls
+Lists files and directories.
+ls -l
+iv)rmdir
+remove directory
+rmdir directory name
+2. FILE MANAGEMENT COMMANDS
+i)	touch
+Create empty file
+touch file name
+ii)	echo
+Write content into file
+echo “hello friend”>file name
+iii)	cat
+Displays file contents.
+cat filename
+iv)	mv
+Copy file content into other file
+mv file1 file 2
+v)	chmod
+Changes file permissions.
+chmod 755 file name 
+To check weather permission is apply or not write following command 
+ls -l filename 
+vi)	chown
+Changes file owner.
+chown user filename 
+E.g chown codeuser10003 trial
+vii)chgrp
+Changes file group.
+chgrp group filename 
+
+3. PROCESS MANAGEMENT COMMANDS
+i) ps
+Displays running processes.
+ps -ef
+ii) top
+Displays real-time running processes and system resource usage such as CPU and memory.
+top
+iii) kill 
+The kill command is used to terminate a running process using its process ID (PID).
+kill pid (e.g kill 1234)
+iv) killall
+Terminates all processes with a given name.
+killall process_name
+E.g killall 
+4. TEXT PROCESSING COMMANDS
+sort
+Sorts lines of a file.	
+sort data.txt
+grep
+Searches for a pattern in a file.
+grep "Linux" notes.txt
+awk
+Processes and extracts text.
+awk '{print $1}' file.txt
+
+5. FILE MANAGEMENT SYSTEM CALLS
+open()
+Opens or creates a file.
+read()
+Reads data from a file.
+write()
+Writes data to a file.
+close()
+Closes an opened file.
+
+6. PROCESS & USER INFORMATION SYSTEM CALLS
+getpid()
+Returns process ID of calling process.
+getuid() / geteuid()
+Returns real and effective user ID.
+getgid() / getegid()
+Returns real and effective group ID.
