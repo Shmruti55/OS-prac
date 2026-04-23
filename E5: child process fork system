@@ -1,0 +1,38 @@
+. Create a C file using nano:
+nano fork_demo.c
+3. Type the following program and save the file.
+#include <stdio.h>
+#include <unistd.h>
+#include <sys/types.h>
+
+int main()
+{
+    pid_t pid;
+
+    pid = fork();   // Create child process
+
+    if (pid < 0)
+    {
+        printf("Fork failed\n");
+    }
+    else if (pid == 0)
+    {
+        // Child process
+        printf("Child Process\n");
+        printf("Child PID  : %d\n", getpid());
+        printf("Parent PID : %d\n", getppid());
+    }
+    else
+    {
+        // Parent process
+        printf("Parent Process\n");
+        printf("Parent PID : %d\n", getpid());
+    }
+
+    return 0;
+}
+
+4. Compile the program:
+gcc fork_demo.c -o fork_demo
+5. Execute the program:
+./fork_demo
